@@ -5,14 +5,14 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Document</title>
-    <link href='./style.css' rel='stylesheet'>
 </head>
 
 <body>
     <div id='app'>
-        <ul>
-            <li v-for="email in randEmails">{{email}}</li>
+        <ul v-if="randEmails.length === 10">
+            <li v-for="(email, index) in randEmails" :key="index">{{email}}</li>
         </ul>
+        <div v-else>Loading random emails...</div>
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
